@@ -1,0 +1,2 @@
+class RimindersController < ApplicationController
+end
