@@ -20,6 +20,7 @@ class HabitsController < ApplicationController
     end
 
     def update
+
         user = User.find_by(id: session[:user_id])
         habit = Habit.find(params[:id])
         habit.update!(habit_params)
@@ -39,6 +40,6 @@ class HabitsController < ApplicationController
     private
 
     def habit_params
-        params.permit(:logo, :name, :repeat, :goal, :time_of_day, :start_date)
+        params.permit(:logo, :name, :repeat, :goal, :time_of_day, :start_date, :progress)
     end
 end
