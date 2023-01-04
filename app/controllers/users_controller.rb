@@ -10,10 +10,11 @@ class UsersController < ApplicationController
 
         def show
             user = User.find_by(id: session[:user_id])
-            render json: user
+            render json: user, status: :ok
         end
 
         def update
+            byebug
             user = User.find_by(id: session[:user_id])
             user.update!(user_params)
             render json: user, status: :accepted
@@ -28,6 +29,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:username, :password, :password_confirmation, :email, :picture, :image)
+        params.permit(:username, :password, :password_confirmation, :email, :picture, :image, :profile_picture)
     end
 end

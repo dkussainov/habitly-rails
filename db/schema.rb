@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_28_015028) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_052007) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_28_015028) do
   end
 
   create_table "riminders", force: :cascade do |t|
-    t.time "time"
+    t.time "time", default: "2000-01-01 05:21:56"
     t.bigint "user_id", null: false
     t.bigint "habit_id", null: false
     t.datetime "created_at", null: false
