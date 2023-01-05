@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_04_052007) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_05_191424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_052007) do
 
   create_table "to_do_lists", force: :cascade do |t|
     t.string "title"
-    t.time "time"
+    t.time "time", default: "2000-01-01 19:16:13"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

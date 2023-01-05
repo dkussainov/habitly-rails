@@ -14,7 +14,6 @@ class UsersController < ApplicationController
         end
 
         def update
-            byebug
             user = User.find_by(id: session[:user_id])
             user.update!(user_params)
             render json: user, status: :accepted
